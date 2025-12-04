@@ -70,4 +70,4 @@ The Swift code can then call the Go function directly through the C interface.
 </ul>
 
 <h2>Screenshot</h2>
-<img src="" width="500" height="250">
+<img src="https://github.com/zeeshan2k2/GoWrapperMacApp/blob/main/Screenshot/main.png" width="400" height="250">
