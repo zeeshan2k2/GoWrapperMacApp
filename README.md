@@ -68,3 +68,6 @@ The Swift code can then call the Go function directly through the C interface.
   <li><strong>macOS:</strong> Fully supported using static linking.</li>
   <li><strong>iOS:</strong> Not supported with <code>c-archive</code>; requires <code>gomobile bind</code>.</li>
 </ul>
+
+<h2>Screenshot</h2>
+<img src="" width="500" height="250">
