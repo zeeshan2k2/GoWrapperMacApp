@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="24127" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24127"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +675,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="GoWrapperMacApp" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -703,15 +705,107 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="GoWrapperMacApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="481" height="390"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xTI-71-oKs">
+                                <rect key="frame" x="98" y="314" width="285" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="Tw8-tQ-b2A"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="GoWrapperMacApp" id="FJz-Ed-ZUc">
+                                    <font key="font" metaFont="systemBold" size="30"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0dF-WV-slB">
+                                <rect key="frame" x="121" y="262" width="239" height="19"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Computing Fibonacci for number " id="nKd-Ek-MoK">
+                                    <font key="font" metaFont="systemMedium" size="15"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qlF-T0-IgP">
+                                <rect key="frame" x="150" y="212" width="181" height="24"/>
+                                <subviews>
+                                    <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ido-2y-xsf">
+                                        <rect key="frame" x="0.0" y="0.0" width="95" height="24"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="Vvy-RO-o7r">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="M2p-NA-0bb">
+                                        <rect key="frame" x="103" y="0.0" width="78" height="24"/>
+                                        <buttonCell key="cell" type="push" title="compute" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bZW-ul-Y9e">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <color key="bezelColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="78" id="oc4-Lr-1gQ"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="computeBtnClicked:" target="XfG-lQ-9wD" id="9lG-Px-YHu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="181" id="nis-Hu-xAn"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <textField clipsToBounds="YES" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2H9-Os-Pa3">
+                                <rect key="frame" x="13" y="165" width="455" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="451" id="5rA-bM-aYr"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title=" " id="hEM-ed-0Cg">
+                                    <font key="font" metaFont="system" size="15"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="0dF-WV-slB" firstAttribute="top" secondItem="xTI-71-oKs" secondAttribute="bottom" constant="33" id="2NM-a2-fU2"/>
+                            <constraint firstItem="xTI-71-oKs" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="2fN-AY-l3T"/>
+                            <constraint firstItem="xTI-71-oKs" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="29" id="J5M-di-75i"/>
+                            <constraint firstAttribute="trailing" secondItem="2H9-Os-Pa3" secondAttribute="trailing" constant="15" id="M1o-yv-Fxq"/>
+                            <constraint firstItem="qlF-T0-IgP" firstAttribute="top" secondItem="0dF-WV-slB" secondAttribute="bottom" constant="26" id="XOy-oT-7pA"/>
+                            <constraint firstItem="xTI-71-oKs" firstAttribute="centerX" secondItem="0dF-WV-slB" secondAttribute="centerX" id="f48-1J-Hal"/>
+                            <constraint firstItem="0dF-WV-slB" firstAttribute="centerX" secondItem="qlF-T0-IgP" secondAttribute="centerX" id="lQe-fr-ELf"/>
+                            <constraint firstItem="2H9-Os-Pa3" firstAttribute="top" secondItem="qlF-T0-IgP" secondAttribute="bottom" constant="28" id="ozM-Ux-ItE"/>
+                            <constraint firstItem="2H9-Os-Pa3" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="utu-Nf-iS7"/>
+                            <constraint firstItem="2H9-Os-Pa3" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="15" id="wh7-eR-Vgl"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="computeBtn" destination="M2p-NA-0bb" id="qn8-3m-750"/>
+                        <outlet property="numberTxtField" destination="ido-2y-xsf" id="qxf-qY-KwD"/>
+                        <outlet property="resultLabel" destination="2H9-Os-Pa3" id="p6o-yh-73G"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="74.5" y="715"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
